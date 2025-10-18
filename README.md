@@ -1,14 +1,15 @@
 graph TD
+
     %% ==============================
     %% MÓDULOS PRINCIPALES
     %% ==============================
+    
     subgraph ST_DFS_CA["ST-DFS-CA: Arquitectura Táctica de Fusión de Sensores"]
         A["Módulo de Detección / Sensores [SDR, Micrófonos, Cámara]"]
         B["Módulo de Procesamiento Central [Procesador (Jetson/SBC) con Lógica IA/Fusión (MATLAB/Python)]"]
         C["Módulo de Alimentación [Batería y gestión eléctrica]"]
         D["Módulo de Comunicaciones [WiFi y GPS]"]
         E["Módulo de Interacción / Visualización [Pantalla táctil]"]
-
     end
 
     %% ==============================
