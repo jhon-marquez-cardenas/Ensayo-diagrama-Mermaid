@@ -1,15 +1,14 @@
-# Ensayo-diagrama-Mermaid
-
 graph TD
     %% ==============================
     %% MÓDULOS PRINCIPALES
     %% ==============================
     subgraph ST_DFS_CA["ST-DFS-CA: Arquitectura Táctica de Fusión de Sensores"]
-        A["Módulo de Detección / Sensores"]
-        B["Módulo de Procesamiento Central (IA / ML)"]
-        C["Módulo de Alimentación Eléctrica"]
-        D["Módulo de Comunicaciones / GPS"]
-        E["Módulo de Interacción / Visualización"]
+        A["Módulo de Detección / Sensores [SDR, Micrófonos, Cámara]"]
+        B["Módulo de Procesamiento Central [Procesador (Jetson/SBC) con Lógica IA/Fusión (MATLAB/Python)]"]
+        C["Módulo de Alimentación [Batería y gestión eléctrica]"]
+        D["Módulo de Comunicaciones [WiFi y GPS]"]
+        E["Módulo de Interacción / Visualización [Pantalla táctil]"]
+
     end
 
     %% ==============================
@@ -37,9 +36,9 @@ graph TD
     %% ==============================
     %% CONEXIONES DE DATOS Y SEÑALES
     %% ==============================
-    A -- "Señales de RF Crudas (Digital / IQ)" --> B
-    A -- "Datos Acústicos Crudos (Digital / Audio)" --> B
-    A -- "Video / Imágenes Crudas (IP / USB3)" --> B
+    A -- "Señales <br/>de RF Crudas <br/>(Digital / IQ)" --> B
+    A -- "Datos <br/>Acústicos <br/>Crudos <br/>(Digital /<br/> Audio)" --> B
+    A -- "Video / Imágenes <br/>Crudas (IP / USB3)" --> B
 
     D -- "Datos de Posición (GNSS)" --> B
     D -- "Comando / Datos de Red (IP / WiFi)" --> E
@@ -50,25 +49,35 @@ graph TD
     %% ==============================
     %% ESTILOS DE NODOS
     %% ==============================
-    style C fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#ccffcc,stroke:#333,stroke-width:2px
+    style B fill:#b3ecff,stroke:#333,stroke-width:2px
 
     %% ==============================
     %% ESTILOS DE ENLACES
     %% ==============================
-    linkStyle 0 stroke:#006400,stroke-width:2px,color:#006400
-    linkStyle 1 stroke:#006400,stroke-width:2px,color:#006400
-    linkStyle 2 stroke:#006400,stroke-width:2px,color:#006400
-    linkStyle 3 stroke:#006400,stroke-width:2px,color:#006400
+    
+    %%CONEXIÓN CON EL SUBSISTEMA MECÁNICO
+    linkStyle 0 stroke:brown,stroke-width:2px,stroke-dasharray:20 10
+    linkStyle 1 stroke:brown,stroke-width:2px,stroke-dasharray:20 10
+    linkStyle 2 stroke:brown,stroke-width:2px,stroke-dasharray:20 10
+    linkStyle 3 stroke:brown,stroke-width:2px,stroke-dasharray:20 10
+    linkStyle 4 stroke:brown,stroke-width:2px,stroke-dasharray:20 10
+    
+    %%SEÑALES DE ALIMENTACIÓN ELÉCTRICA
+    linkStyle 5 stroke:green,stroke-width:2px,stroke-dasharray:5 5
+    linkStyle 6 stroke:green,stroke-width:2px,stroke-dasharray:5 5
+    linkStyle 7 stroke:green,stroke-width:2px,stroke-dasharray:5 5
+    linkStyle 8 stroke:green,stroke-width:2px,stroke-dasharray:5 5
 
-    linkStyle 4 stroke:blue,stroke-width:2px,stroke-dasharray:5 5
-    linkStyle 5 stroke:blue,stroke-width:2px,stroke-dasharray:5 5
-    linkStyle 6 stroke:blue,stroke-width:2px,stroke-dasharray:5 5
+    %%CONEXIÓN DE DATOS Y SEÑAL
+    linkStyle 9 stroke:blue,stroke-width:2px
+    linkStyle 10 stroke:blue,stroke-width:2px
+    linkStyle 11 stroke:blue,stroke-width:2px
 
-    linkStyle 7 stroke:red,stroke-width:2px
-    linkStyle 8 stroke:red,stroke-width:2px
-
-    linkStyle 9 stroke:purple,stroke-width:2px
-    linkStyle 10 stroke:purple,stroke-width:2px
-    linkStyle 11 stroke:purple,stroke-width:2px
+    %%FLUJO DE INFORMACIÓN Y CONTROL
+    linkStyle 12 stroke:blue,stroke-width:2px,stroke-dasharray:5 10
+    linkStyle 13 stroke:blue,stroke-width:2px,stroke-dasharray:5 10
+    linkStyle 14 stroke:blue,stroke-width:2px,stroke-dasharray:5 10
+    linkStyle 15 stroke:blue,stroke-width:2px,stroke-dasharray:5 10
+    linkStyle 16 stroke:blue,stroke-width:2px,stroke-dasharray:5 10
 
